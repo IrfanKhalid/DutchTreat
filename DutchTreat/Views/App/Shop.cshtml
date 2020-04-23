@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Shop";
+}
+
+@section Scripts
+{
+    <script src="~/node_modules/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"></script>
+}
+<h1>Shop</h1>
+<div class="row">
+    @foreach (var p in @Model)
+    {
+    <div class="col-md-3">
+        <div class="border bg-light rounded p-2">
+            <img src="~/img/@(p.ArtId).jpg" class="img-fluid" />
+            <ul class="product-props">
+                <li>Price: @p.Price</li>
+                <li>Artist: @p.Artist</li>
+                <li>Title: @p.Title</li>
+                <li>Description: @p.ArtDescription</li>
+            </ul>
+            <button id="buyButton" class="btn btn-success">Buy</button>
+        </div>
+    </div>
+    }
+</div>

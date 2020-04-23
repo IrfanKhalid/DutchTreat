@@ -1,0 +1,7 @@
+﻿dotnet ef 
+dotnet ef database update
+dotnet ef migrations add initialDb
+
+For identity:
+
+dotnet ef migrations add identity
