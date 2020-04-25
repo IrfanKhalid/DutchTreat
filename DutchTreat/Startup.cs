@@ -16,6 +16,8 @@ using AutoMapper;
 using System.Reflection;
 using DutchTreat.Data.Entities;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace DutchTreat
 {
@@ -43,6 +45,19 @@ namespace DutchTreat
 
              })
                 .AddEntityFrameworkStores<DutchContext>();
+
+            services.AddAuthentication()
+                .AddCookie()
+                .AddJwtBearer(cwg=>
+                {
+                    cwg.TokenValidationParameters = new TokenValidationParameters ()
+                    {
+                        ValidIssuer = Config["Tokens:Issuer"],
+                        ValidAudience = Config["Tokens:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Config["Tokens:Key"]))
+                    };
+                }
+                );
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddTransient<IMailService, NullMailService>();
             services.AddTransient<DutchSeeder>();

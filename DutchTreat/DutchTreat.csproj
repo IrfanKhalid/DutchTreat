@@ -10,10 +10,36 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
+    <Content Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
+    <None Remove="%2a%2a\**" />
     <None Remove="node_modules\**" />
+    <TypeScriptCompile Remove="%2a%2a\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="%2a%2a\%2a.config" />
+    <Content Remove="%2a%2a\%2a.cshtml" />
+    <Content Remove="%2a%2a\%2a.razor" />
+    <Content Remove="wwwroot\ts\StoreCustomer.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Error.cshtml" />
+    <Content Include="Pages\_ViewStart.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\App\About.cshtml" />
+    <Content Include="Views\App\Contact.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\Shop.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewImports.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngularJS.Intellisense" Version="1.0.3" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
     <PackageReference Include="bootstrap" Version="4.4.1" />
     <PackageReference Include="FontAwesome" Version="4.7.0" />
@@ -25,9 +51,21 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.0-preview.2.20159.4" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0-preview.2.20160.3" />
+    <PackageReference Include="Microsoft.TypeScript.MSBuild" Version="3.8.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Templating" Version="3.1.2" />
     <PackageReference Include="OdeToCode.UseNodeModules" Version="3.0.0" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\StoreCustomer.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\Shared\" />
   </ItemGroup>
 
 </Project>

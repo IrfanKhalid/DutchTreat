@@ -10,6 +10,12 @@
       "Default": "Information",
       "Microsoft": "Warning"
     }
+  },
+  "Tokens": {
+    "Key": "ADHS232hhjSDSJKDSJ",
+    "Issuer": "localhost",
+    "Audience": "Jane"
+
   }
 
 }

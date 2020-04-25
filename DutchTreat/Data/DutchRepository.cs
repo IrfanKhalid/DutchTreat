@@ -41,6 +41,24 @@ namespace DutchTreat.Data
             }
         }
 
+        public IEnumerable<Order> GetAllOrderByUserName(string _Username)
+        {
+            try
+            {
+                return context.Orders
+                    .Where(ua => ua.UserInformation.UserName == _Username)
+                    .Include(y => y.Items)
+                    .ThenInclude(x => x.Product)
+                    .OrderBy(x => x.Id)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                logger.LogError($"It's failed due to {ex}");
+                return null;
+            }
+        }
+
         public Order GetOrderById(int OrderId)
         {
             try {
