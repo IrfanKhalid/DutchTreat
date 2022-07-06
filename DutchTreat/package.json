@@ -22,7 +22,7 @@
     "bootstrap": "4.4.1",
     "font-awesome": "4.7.0",
     "jquery": "^3.5.0",
-    "jquery-validation": "1.19.0",
+    "jquery-validation": "1.19.5",
     "jquery-validation-unobtrusive": "3.2.10",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
